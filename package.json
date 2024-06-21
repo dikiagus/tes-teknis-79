@@ -20,6 +20,7 @@
   "homepage": "https://github.com/meddhiaka/employee-management-backend-challenge#readme",
   "dependencies": {
     "express": "^4.19.2",
+    "express-validator": "^7.1.0",
     "mongoose": "^8.4.3"
   },
   "devDependencies": {
