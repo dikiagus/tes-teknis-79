@@ -7,10 +7,15 @@ The backend solution is an <b>API</b> for managing employees with just 3 control
 <hr>
 
 ### Github Workflow
+* `db-image`: branch is responsible for creating the mongodb container which serves as the database.
+* `feature`: branch will contain all project requirements divided into sub branches and labeled with `enhancements`.
+* `release`: branch is merged into the main branch when the work is tested and completed.
 
-```
-soon ASAP ^^ (few hours)
-```
+> More documentation is included in the issues tab.
+
+<center>I created this workflow with Figjam, a Figma product that is excellent for creating diagrams workflows and even project management ^^</center>
+<img width="2912" alt="workflow" src="https://github.com/meddhiaka/employee-management-backend-challenge/assets/108496649/0dbfeb7a-479b-4dc8-a56d-28600ee3ae28">
+
 
 
 ### Playing with the solution
