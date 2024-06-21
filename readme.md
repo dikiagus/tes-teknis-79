@@ -37,9 +37,18 @@ soon ASAP ^^ (few hours)
 
 > the test is performed using `Thunder Client`
 
-```
-soon ASAP ^^ (few hours)
-```
+* POST /employees: Add a new employee:
+[demo for adding new employee](https://github.com/meddhiaka/employee-management-backend-challenge/assets/108496649/9e8d1cec-25ec-4335-996c-cbb2f5154247)
+
+* PUT /employees/:id: Update an existing employee's details:
+[demo for updating an employee](https://github.com/meddhiaka/employee-management-backend-challenge/assets/108496649/e986166a-e5bb-40a6-ac76-b3d3b99a24a8)
+
+* DELETE /employees/:id: Delete an employee by ID:
+[demo for deleting an employee](https://github.com/meddhiaka/employee-management-backend-challenge/assets/108496649/fb75f94b-b472-413a-8a19-af852f33b5a3)
+
+
+
+
 
 <hr>
 
