@@ -64,6 +64,8 @@ YOURE INSIDE THE CONTAINER NOW YOU CAN LIST DATABASES, USE ONE, DO ANY CRUD OPER
 
 > the test is performed using `Thunder Client`
 
+> I recorded the tests before adding the reqeust validation branch 
+
 * POST /employees: Add a new employee:
 [demo for adding new employee](https://github.com/meddhiaka/employee-management-backend-challenge/assets/108496649/9e8d1cec-25ec-4335-996c-cbb2f5154247)
 
