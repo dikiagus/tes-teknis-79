@@ -30,7 +30,29 @@ soon ASAP ^^ (few hours)
 * To run the mongo docker container  (MongoDB database in a container created with few commands and isolated form the OS):
 
 ```
-soon ASAP ^^ (few hours)
+// navigate to docker compose
+> cd ./db 
+
+// run docker compose file in detached mode
+> sudo docker compose up -d
+
+// open the mongo shell to interacte with the database
+> docker exec -it personal-mongo-database mongosh
+
+YOURE INSIDE THE CONTAINER NOW YOU CAN LIST DATABASES, USE ONE, DO ANY CRUD OPERATIONS...
+
+    # list all databases
+    > show dbs
+    
+    # use a specific database
+    > use db_name
+
+    # see all the collections of the database selected
+    > show collections
+
+    # list all documents in a collection
+    > db.db_name.find()
+
 ```
 
 ### Demos of the backend application in action XD

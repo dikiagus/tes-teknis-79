@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  personal-mongo:
+    image: mongo:latest
+    container_name: personal-mongo-database
+    ports:
+      - "3333:27017"
+    volumes:
+      - .:/data/db
