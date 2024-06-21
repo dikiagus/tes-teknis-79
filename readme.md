@@ -43,7 +43,7 @@ soon ASAP ^^ (few hours)
 
 <hr>
 
-I recommand to see the issues tag in the process of understand the solution <u>(ordered) </u> implementations: 
+I recommand to see the issues tag in the process of understandimg the solution <u>(ordered) </u> implementations: 
 * https://github.com/meddhiaka/employee-management-backend-challenge/issues/1
 * https://github.com/meddhiaka/employee-management-backend-challenge/issues/3
 * https://github.com/meddhiaka/employee-management-backend-challenge/issues/5
