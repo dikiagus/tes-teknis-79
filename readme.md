@@ -58,5 +58,7 @@ CMD ["nodemon", "src/index.ts"]
 - Pilih Metode Post
 - Masukkan url : http://localhost:3001/employees
 - Pada Body pilih json dan masukkan data seperti nama, email, position, department, salary
-![image](https://github.com/user-attachments/assets/8b317963-1ddf-458e-b2f0-c1a1c59b5965)
+
+  ![image](https://github.com/user-attachments/assets/df37da2a-fd76-4595-86da-96812ca9536e)
+
 
