@@ -1,5 +1,5 @@
 # Take HomeTestIT Infra
-<br>
+<br><br>
 # Membuat Dockerfile :
 
 // Gunakan image Node.js versi 16 sebagai base image
@@ -61,4 +61,7 @@ CMD ["nodemon", "src/index.ts"]
 
   ![image](https://github.com/user-attachments/assets/df37da2a-fd76-4595-86da-96812ca9536e)
 
+# Tabel pada mongoDB:
+
+![image](https://github.com/user-attachments/assets/e265b521-2ba0-4b72-b5a4-f5f03fcadc96)
 
