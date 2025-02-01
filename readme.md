@@ -52,3 +52,11 @@ CMD ["nodemon", "src/index.ts"]
 - cara running docker image yang sudah dibuat dengan menggunakan perintah : docker run -p (port yang digunakan) (username_docker)/(repository_docker)
   
 ![image](https://github.com/user-attachments/assets/7be9baa1-73d5-4ce8-bfb6-2fdf100e9260)
+
+# API POST :
+- Menggunakan Postman
+- Pilih Metode Post
+- Masukkan url : http://localhost:3001/employees
+- Pada Body pilih json dan masukkan data seperti nama, email, position, department, salary
+![image](https://github.com/user-attachments/assets/8b317963-1ddf-458e-b2f0-c1a1c59b5965)
+
