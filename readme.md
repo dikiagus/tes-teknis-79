@@ -63,5 +63,6 @@ CMD ["nodemon", "src/index.ts"]
 
 # Tabel pada mongoDB:
 
-![image](https://github.com/user-attachments/assets/e265b521-2ba0-4b72-b5a4-f5f03fcadc96)
+![image](https://github.com/user-attachments/assets/41ce0c13-4cae-4ee1-b776-6feae833a1e1)
+
 
