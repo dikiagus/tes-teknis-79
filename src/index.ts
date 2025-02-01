@@ -1,13 +1,17 @@
-import dotenv from 'dotenv'
-import app from './app'
-import connect from './config/db'
+import dotenv from 'dotenv';
+import app from './app';
+import connect from './config/db';
 
-// dotenv library used to get environment variables
-dotenv.config()
+// Memuat variabel lingkungan dari file .env
+dotenv.config();
 
-// connecting to the database
-connect()
+// Menghubungkan ke database
+connect();
 
-app.listen(process.env.PORT, () => {
-  console.log(`server running at http://localhost:${process.env.PORT}`)
-})
+// Mendapatkan port dari variabel lingkungan atau menggunakan port default 3001
+const port = process.env.PORT || 3001;
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
+
+export default app;

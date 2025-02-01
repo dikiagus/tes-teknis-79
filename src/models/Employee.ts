@@ -16,7 +16,7 @@ const employeeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    departement: {
+    department: {
         type: String
     },
     salary: {

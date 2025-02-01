@@ -1,12 +1,12 @@
 import { Router } from 'express'
-import { addEmploye, removeSpecificEmployee, updateEmployee } from '../controllers/EmployeeController'
+import { addEmploye, getEmployees, removeSpecificEmployee, updateEmployee } from '../controllers/EmployeeController'
 import { body, param } from 'express-validator'
 
 // nested route including all the work :D
 const router = Router()
 
 
-
+router.get('/employees', getEmployees);
 // i got the comments of each route from the technical document
 
 

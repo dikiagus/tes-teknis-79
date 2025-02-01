@@ -1,15 +1,29 @@
 import express, { Express, Request, Response } from 'express';
+import mongoose from 'mongoose'; // Impor mongoose
 import router from './routes/EmployeeRoute';
 
-const app: Express = express()
+const app: Express = express();
+app.use(express.json());
 
 app.get('/', (req: Request, res: Response) => {
-    res.send('hello world')
-})
+    res.send('hello world');
+});
 
-app.use(express.json())
+// Tambahkan endpoint untuk menguji koneksi database
+app.get('/testdb', async (req: Request, res: Response) => {
+    try {
+        const db = mongoose.connection;
+        if (db.readyState === 1) { // 1 berarti connected
+            res.status(200).json({ message: 'Database connection is successful' });
+        } else {
+            res.status(500).json({ message: 'Database connection failed', readyState: db.readyState });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Database connection failed', error: error.message });
+    }
+});
 
-// all the work is in router module, i made it modular for simplicity
-app.use('/', router)
+// Semua pekerjaan ada di modul router, saya membuatnya modular untuk kesederhanaan
+app.use('/', router);
 
-export default app
+export default app;

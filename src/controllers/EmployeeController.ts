@@ -1,109 +1,120 @@
-import { Request, Response } from 'express'
-import employeeModel from './../models/Employee'
+import { Request, Response } from 'express';
+import employeeModel from './../models/Employee';
 import { validationResult } from 'express-validator';
 import { Employee, EmployeeOptionalProps } from '../types/EmployeTypes';
 
-// controller to add a unique new employee
+// Controller untuk mendapatkan semua employees
+export async function getEmployees(req: Request, res: Response) {
+    try {
+        const employees = await employeeModel.find();
+        res.status(200).json(employees);
+    } catch (error) {
+        console.error(`Error: GET /employees, ${error.message}`);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+}
+
+// Controller to add a unique new employee
 export async function addEmploye(req: Request, res: Response) {
     try {
+        console.log("Received request:", req.body); // Logging for debugging
 
-        // employee body validation with express validator
+        // Employee body validation with express validator
         const result = validationResult(req);
         if (!result.isEmpty()) {
-            res.status(400).json({ errors: result.array() });
+            return res.status(400).json({ errors: result.array() });
         }
         
-        // defined the interface of type for employee body
-        const employeeBody: Employee = req.body
+        // Defined the interface of type for employee body
+        const employeeBody: Employee = req.body;
+        const employee = new employeeModel(employeeBody);
 
-        const employee = new employeeModel(employeeBody)
+        // Adding new employee to the collection
+        const newEmployee = await employee.save();
 
-        // adding new employee to the collection
-        const newEmployee = await employee.save()
-
-        // no new employee means that is not added from orm save method !
+        // No new employee means that it is not added from ORM save method
         if (!newEmployee) {
-            res.status(404).json({
-                message: "the employee not existing after trying to create"
-            })
+            return res.status(404).json({
+                message: "The employee not existing after trying to create"
+            });
         }
 
-        // created user if the user exists with 201 http code and message showing that is created :D
+        // Created user if the user exists with 201 HTTP code and message showing that is created
         res.status(201).json({
-            message: "employee created",
+            message: "Employee created",
             newEmployee
-        })
+        });
 
     } catch (error) {
-        console.error(`error: POST /employees, ${error.messages}`)
+        console.error(`Error: POST /employees, ${error.message}`); // Ensure error.message is used
+        return res.status(500).json({ error: "Internal Server Error" });
     }
 }
 
 // Controller to update a specific employee by its id
 export async function updateEmployee(req: Request, res: Response) {
     try {
-
-        // param id validation or optional body props validation here :)
+        // Param id validation or optional body props validation here :)
         const result = validationResult(req);
         if (!result.isEmpty()) {
-            res.status(400).json({ errors: result.array() });
+            return res.status(400).json({ errors: result.array() });
         }
 
-        // getting id param from url
-        const id: string = req.params.id
+        // Getting id param from url
+        const id: string = req.params.id;
+        // Defined the interface of type for employee body
+        const employeeBody: EmployeeOptionalProps = req.body;
 
-        // defined the interface of type for employee body (missing for tomorrow)
-        const employeeBody: EmployeeOptionalProps = req.body
-
-        // employee body validation with express validator
-
-        const updatedEmployee = await employeeModel.findByIdAndUpdate({ _id: id }, employeeBody)
+        // Employee body validation with express validator
+        const updatedEmployee = await employeeModel.findByIdAndUpdate({ _id: id }, employeeBody, { new: true });
 
         if (!updatedEmployee) {
-            res.status(400).json({
-                message: "the employee is not updated"
-            })
+            return res.status(400).json({
+                message: "The employee is not updated"
+            });
         }
 
         return res.status(200).json({
-            message: "the employee is updated",
+            message: "The employee is updated",
             updatedEmployee
-        })
+        });
 
     } catch (error) {
-        console.error(`error: PUT /employees/:id, ${error.messages}`)
+        console.error(`Error: PUT /employees/:id, ${error.message}`); // Ensure error.message is used
+        res.status(500).json({ error: "Internal Server Error" });
     }
 }
 
-// controller to delete a specific employee by its id
+// Controller to delete a specific employee by its id
 export async function removeSpecificEmployee(req: Request, res: Response) {
     try {
-        // only the array will give the validation error of param id if not existing...
+        // Only the array will give the validation error of param id if not existing...
         const result = validationResult(req);
         if (!result.isEmpty()) {
-            res.status(400).json({ errors: result.array() });
+            return res.status(400).json({ errors: result.array() });
         }
 
-        // getting id param from url
-        const id: string = req.params.id
+        // Getting id param from url
+        const id: string = req.params.id;
 
-        // while testing i discovered that this async call always give empty stuff ..
-        const deletedEmployee = await employeeModel.findByIdAndDelete(id)
+        // While testing I discovered that this async call always gives empty stuff...
+        const deletedEmployee = await employeeModel.findByIdAndDelete(id);
 
         if (!deletedEmployee) {
-            res.status(400).json({
-                message: "the employee is not found for deletion"
-            })
+            return res.status(400).json({
+                message: "The employee is not found for deletion"
+            });
         }
 
-        // ive found that status 204 on reddit, it is suitable for deletion!
+        // Status 204 is suitable for deletion
         res.status(204).json({
-            message: "deleted employee",
+            message: "Deleted employee",
             deletedEmployee
-        })
+        });
 
     } catch (error) {
-        // other unexpected errors ...
-        console.error(`error: DELETE /employees/:id, ${error.messages}`)
+        // Other unexpected errors...
+        console.error(`Error: DELETE /employees/:id, ${error.message}`); // Ensure error.message is used
+        res.status(500).json({ error: "Internal Server Error" });
     }
 }

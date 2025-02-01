@@ -1,15 +1,19 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 export default async function connect() {
-    // i did the try catch block here also, not just in the controllers ;)
     try {
-        // to ignore the issue of undefined environment variable in typescript
-        if(process.env.MONGODB_URI) {
-            const e = mongoose.connect(process.env.MONGODB_URI)
-            // im using these info, error to differentiate from different logging messages ...
-            console.info(`cluster destination ^^ : ${(await e).connection.host}`)
+        if (process.env.MONGODB_URI) {
+            const e = await mongoose.connect(process.env.MONGODB_URI, {
+                serverSelectionTimeoutMS: 10000, // Adjust the timeout for server selection
+                socketTimeoutMS: 45000, // Adjust the socket timeout
+                bufferCommands: false, // Disable mongoose buffering
+                autoIndex: false, // Disable auto-indexing (for performance)
+            });
+            console.info(`Cluster destination: ${e.connection.host}`);
+        } else {
+            console.error('MONGODB_URI is not defined in environment variables');
         }
     } catch (error) {
-        console.error(`error connecting to mongodb, why ? :\n${error.messages}`)
+        console.error(`Error connecting to MongoDB: ${error.message}`);
     }
 }
