@@ -35,11 +35,16 @@ EXPOSE 3001
 CMD ["nodemon", "src/index.ts"]
 <br><br><br>
 # Build :
-Menggunakan perintah docker build -t (username/repositorydocker)
+- Masuk ke cmd, dan pindahkan ke direktori tujuan
+
+- Menggunakan perintah : docker build -t (username/repositorydocker)
 
 ![image](https://github.com/user-attachments/assets/71b34a4f-5297-4123-ad6c-11e9ec230e5f)
 
 # Push :
-Menggunakan perintah docker push (username/repositorydocker)
+- Masuk ke cmd, dan pindahkan ke direktori tujuan
+
+- Menggunakan perintah : docker push (username/repositorydocker)
+
 ![image](https://github.com/user-attachments/assets/ad94475f-562e-4f85-8d41-12a375c797ab)
 
