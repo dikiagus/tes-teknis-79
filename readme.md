@@ -2,16 +2,16 @@ Take HomeTestIT Infra
 
 # Dockerfile :
 
-# Gunakan image Node.js versi 16 sebagai base image
+// Gunakan image Node.js versi 16 sebagai base image
 FROM node:16
 
-# Tentukan direktori kerja di dalam container
+// Tentukan direktori kerja di dalam container
 WORKDIR /app
 
-# Salin package.json dan package-lock.json ke direktori kerja
+// Salin package.json dan package-lock.json ke direktori kerja
 COPY package*.json ./
 
-# Instal dependensi
+// Instal dependensi
 RUN npm install
 
 # Salin semua file ke dalam direktori kerja
