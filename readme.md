@@ -1,4 +1,4 @@
-Take HomeTestIT Infra
+## Take HomeTestIT Infra
 
 # Membuat Dockerfile :
 
@@ -57,7 +57,7 @@ CMD ["nodemon", "src/index.ts"]
 - Menggunakan Postman
 - Pilih Metode Post
 - Masukkan url : http://localhost:3001/employees
-- Pada Body pilih json dan masukkan data seperti nama, email, position, department, salary
+- Pada Body pilih raw lalu json dan masukkan data seperti nama, email, position, department, salary
 
   ![image](https://github.com/user-attachments/assets/df37da2a-fd76-4595-86da-96812ca9536e)
 
