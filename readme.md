@@ -6,12 +6,10 @@ Take HomeTestIT Infra
 // Gunakan image Node.js versi 16 sebagai base image
 
 FROM node:16
-<br><br>
+<br><br><br>
 // Tentukan direktori kerja di dalam container
 
 WORKDIR /app
-
-
 // Salin package.json dan package-lock.json ke direktori kerja
 
 COPY package*.json ./
