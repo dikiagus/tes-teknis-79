@@ -1,13 +1,12 @@
 Take HomeTestIT Infra
 
-# Dockerfile :
+# Membuat Dockerfile :
 
 
 // Gunakan image Node.js versi 16 sebagai base image
 
 FROM node:16
-
-
+<br><br>
 // Tentukan direktori kerja di dalam container
 
 WORKDIR /app
