@@ -34,4 +34,6 @@ EXPOSE 3001
 
 CMD ["nodemon", "src/index.ts"]
 <br><br><br>
+# Build :
+Menggunakan perintah docker build -t
 ![image](https://github.com/user-attachments/assets/71b34a4f-5297-4123-ad6c-11e9ec230e5f)
