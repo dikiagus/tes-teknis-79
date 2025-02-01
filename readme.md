@@ -65,4 +65,7 @@ CMD ["nodemon", "src/index.ts"]
 
 ![image](https://github.com/user-attachments/assets/41ce0c13-4cae-4ee1-b776-6feae833a1e1)
 
-
+# CI/CD Integration
+- Membuat dan mengkonfigurasi file workflow .github/workflows/ci-cd-pipeline.yml
+- Membuat Docker hub access token
+- Membuat 
