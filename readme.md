@@ -48,3 +48,7 @@ CMD ["nodemon", "src/index.ts"]
 
 ![image](https://github.com/user-attachments/assets/ad94475f-562e-4f85-8d41-12a375c797ab)
 
+# Run :
+- cara running docker image yang sudah dibuat dengan menggunakan perintah : docker run -p (port yang digunakan) (username_docker)/(repository_docker)
+  
+![image](https://github.com/user-attachments/assets/7be9baa1-73d5-4ce8-bfb6-2fdf100e9260)
