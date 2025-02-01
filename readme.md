@@ -68,4 +68,4 @@ CMD ["nodemon", "src/index.ts"]
 # CI/CD Integration
 - Membuat dan mengkonfigurasi file workflow .github/workflows/ci-cd-pipeline.yml
 - Membuat Docker hub access token
-- Membuat 
+- Membuat Secrets Action untuk Username Docker dan Docker access token
