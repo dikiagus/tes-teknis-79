@@ -14,16 +14,16 @@ COPY package*.json ./
 // Instal dependensi
 RUN npm install
 
-# Salin semua file ke dalam direktori kerja
+// Salin semua file ke dalam direktori kerja
 COPY . .
 
-# Instal nodemon secara global untuk hot-reloading
+// Instal nodemon secara global untuk hot-reloading
 RUN npm install -g nodemon
 
-# Expose port aplikasi
+// Expose port aplikasi
 EXPOSE 3001
 
-# Jalankan perintah untuk memulai aplikasi
+// Jalankan perintah untuk memulai aplikasi
 CMD ["nodemon", "src/index.ts"]
 
 ![image](https://github.com/user-attachments/assets/71b34a4f-5297-4123-ad6c-11e9ec230e5f)
